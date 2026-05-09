@@ -8,12 +8,17 @@ import ComplianceNote from "@/components/ComplianceNote";
 import { getIndustries, getIndustryBySlug } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
+type SlugPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export function generateStaticParams() {
   return getIndustries().map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getIndustryBySlug(params.slug);
+export async function generateMetadata({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getIndustryBySlug(slug);
   if (!item) return {};
   return createMetadata({
     title: item.seoTitle,
@@ -22,8 +27,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function IndustryDetailPage({ params }: { params: { slug: string } }) {
-  const item = getIndustryBySlug(params.slug);
+export default async function IndustryDetailPage({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getIndustryBySlug(slug);
   if (!item) notFound();
 
   return (
