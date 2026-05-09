@@ -5,12 +5,17 @@ import PageHeader from "@/components/PageHeader";
 import { getArticleBySlug, getArticles } from "@/lib/articles";
 import { createMetadata } from "@/lib/seo";
 
+type SlugPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export function generateStaticParams() {
   return getArticles().map((article) => ({ slug: article.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug);
+export async function generateMetadata({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) return {};
 
   return createMetadata({
@@ -20,8 +25,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function ArticleDetailPage({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug);
+export default async function ArticleDetailPage({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const article = getArticleBySlug(slug);
   if (!article) notFound();
 
   return (
