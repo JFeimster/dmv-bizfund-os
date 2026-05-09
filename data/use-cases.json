@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "emergency-working-capital",
+    "useCaseName": "Emergency Working Capital",
+    "title": "Emergency Working Capital for Local Businesses",
+    "seoTitle": "Emergency Working Capital for Local Businesses | DMV BizFund OS",
+    "metaDescription": "Emergency working capital guidance for local businesses dealing with payroll, repairs, rent pressure, inventory timing, or slow receivables.",
+    "problemDescription": "Emergency working capital becomes relevant when the expense shows up before the revenue does. Payroll, rent, repairs, insurance, inventory, and slow receivables do not care about your lender's underwriting calendar.",
+    "fundingReadinessGuidance": ["Know the exact funding gap", "Identify the use of funds", "Prepare recent bank statements", "Gather invoices, repair quotes, or payroll details", "Avoid overpromising timing or outcomes"],
+    "relevantIndustries": ["contractor-business-funding-northern-virginia", "restaurant-business-funding-washington-dc", "trucking-business-funding-virginia"],
+    "suggestedCalculatorOrChecklist": "Local Business Cash Flow Gap Calculator",
+    "toolSlug": "local-business-cash-flow-gap-calculator",
+    "applyCTA": "Check Funding Options"
+  },
+  {
+    "slug": "equipment-financing",
+    "useCaseName": "Equipment Financing",
+    "title": "Equipment Financing for Local Businesses",
+    "seoTitle": "Equipment Financing for Local Businesses | DMV BizFund OS",
+    "metaDescription": "Equipment financing guidance for contractors, restaurants, trucking companies, medical practices, and local businesses.",
+    "problemDescription": "Equipment financing comes into play when tools, trucks, kitchen equipment, medical equipment, or operational machinery become the difference between revenue and shutdown theater.",
+    "fundingReadinessGuidance": ["Get the equipment quote", "Clarify whether it is replacement or expansion", "Prepare revenue documentation", "Know whether the equipment directly supports revenue", "Compare options before assuming the bank is the only door"],
+    "relevantIndustries": ["contractor-business-funding-northern-virginia", "restaurant-business-funding-washington-dc", "medical-practice-funding-fairfax-county", "trucking-business-funding-virginia"],
+    "suggestedCalculatorOrChecklist": "DMV Funding Readiness Scorecard",
+    "toolSlug": "dmv-funding-readiness-scorecard",
+    "applyCTA": "Check Funding Options"
+  }
+]
