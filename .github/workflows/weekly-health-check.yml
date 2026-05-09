@@ -1,0 +1,72 @@
+name: Weekly Health Check
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-health-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  health-check:
+    name: Weekly build and content health check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TypeScript check
+        run: npm run typecheck
+
+      - name: Validate JSON files parse cleanly
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const dataDir = path.join(process.cwd(), 'data');
+          const files = fs.readdirSync(dataDir).filter((file) => file.endsWith('.json'));
+
+          let hasError = false;
+
+          for (const file of files) {
+            try {
+              JSON.parse(fs.readFileSync(path.join(dataDir, file), 'utf8'));
+              console.log(`✓ ${file} parses cleanly`);
+            } catch (error) {
+              hasError = true;
+              console.error(`✗ ${file} failed JSON parse`);
+              console.error(error.message);
+            }
+          }
+
+          if (hasError) process.exit(1);
+          NODE
+
+      - name: Run production build
+        run: npm run build
+
+      - name: Upload build artifact for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-next-build-output
+          path: .next
+          if-no-files-found: ignore
+          retention-days: 7
