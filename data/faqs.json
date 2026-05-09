@@ -1,0 +1,26 @@
+[
+  {
+    "question": "Does DMV BizFund OS provide guaranteed approvals?",
+    "answer": "No. Funding options vary by business profile, revenue, credit, documentation, time in business, and lender requirements. Nothing here guarantees approval, rates, terms, or timing."
+  },
+  {
+    "question": "Is this only for Washington, DC businesses?",
+    "answer": "No. The flagship market covers Washington, DC, Northern Virginia, Maryland, Alexandria, Arlington, Fairfax County, and nearby DMV markets."
+  },
+  {
+    "question": "What should I do before applying?",
+    "answer": "Start with the DMV Funding Readiness Scorecard, gather recent bank statements, clarify your use of funds, and understand the size and timing of your funding need."
+  },
+  {
+    "question": "Can referral partners use this with clients?",
+    "answer": "Yes. Bank managers, accountants, bookkeepers, attorneys, consultants, commercial realtors, and local connectors can use the partner guides and scorecard as a clean next step."
+  },
+  {
+    "question": "Is this a lender marketplace?",
+    "answer": "No. DMV BizFund OS is positioned as a local capital intelligence hub with guides, tools, referral resources, directory infrastructure, and application paths."
+  },
+  {
+    "question": "Can this be cloned for another city?",
+    "answer": "Yes. The repo uses a market configuration layer and JSON-backed content so future markets like Atlanta, Dallas, and Phoenix can be launched as local BizFund OS instances."
+  }
+]
