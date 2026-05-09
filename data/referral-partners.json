@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "bank-manager-referral-guide",
+    "partnerType": "Bank Manager",
+    "title": "Bank Manager Referral Guide",
+    "seoTitle": "Bank Manager Referral Guide | DMV BizFund OS",
+    "metaDescription": "A referral guide for bank managers who need a clean next step for business clients who may not fit traditional bank requirements right now.",
+    "summary": "Help declined or not-yet-bank-ready clients find a practical next step without damaging the relationship.",
+    "body": "Bank managers often meet solid operators who simply do not fit the bank's box right now. A decline does not have to become a dead end or an awkward hallway ghosting ritual.",
+    "clientPainIndicators": ["Client was declined or delayed", "Documentation is incomplete", "Revenue exists but bank criteria are not met", "Client needs capital faster than traditional underwriting allows"],
+    "whenToRefer": ["After a bank decline", "When the client needs readiness guidance", "When speed matters but guarantees would be inappropriate", "When the client needs a non-bank next step"],
+    "howReferralWorks": "Send the client to the readiness scorecard or application path, or use the partner intake route. The goal is a professional next step, not a reckless promise.",
+    "partnerCTA": "Become a Referral Partner",
+    "starterKitCTA": "Get the Referral Partner Starter Kit"
+  },
+  {
+    "slug": "accountant-referral-guide",
+    "partnerType": "Accountant",
+    "title": "Accountant Referral Guide",
+    "seoTitle": "Accountant Referral Guide | DMV BizFund OS",
+    "metaDescription": "A referral guide for accountants who want to help clients prepare for business funding conversations.",
+    "summary": "Help clients spot funding readiness gaps before cash flow becomes a five-alarm spreadsheet fire.",
+    "body": "Accountants see the smoke before the owner admits there is a fire. This guide helps accountants direct clients toward readiness tools and funding next steps.",
+    "clientPainIndicators": ["Payroll pressure", "Tax pressure", "Receivables gaps", "Expansion expenses", "Thin documentation"],
+    "whenToRefer": ["Before the client applies blindly", "When financial documents need cleanup", "When funding need is obvious but the path is not", "After a bank decline"],
+    "howReferralWorks": "Point the client toward the scorecard, application path, or partner referral route. Strong preparation can improve the quality of the conversation even though approval is never guaranteed.",
+    "partnerCTA": "Become a Referral Partner",
+    "starterKitCTA": "Get the Referral Partner Starter Kit"
+  }
+]
