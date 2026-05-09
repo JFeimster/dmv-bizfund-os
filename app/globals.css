@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.13), transparent 28rem),
+    radial-gradient(circle at bottom right, rgba(242, 193, 78, 0.08), transparent 22rem),
+    #080807;
+  color: #f7f1df;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.75;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  z-index: 100;
+  background: #d4af37;
+  color: #080807;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.85rem 1.15rem;
+  font-weight: 800;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f2c14e;
+  outline-offset: 3px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: #d4af37;
+  color: #080807;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #f7f1df;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card {
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  border-radius: 1.25rem;
+  box-shadow: 0 0 40px rgba(212,175,55,0.08);
+}
+
+.kicker {
+  color: #f2c14e;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.prose-lite h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.08;
+  margin-top: 2rem;
+}
+
+.prose-lite h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.prose-lite ul {
+  padding-left: 1.15rem;
+}
+
+.prose-lite li {
+  margin: 0.45rem 0;
+  color: #d9cfb7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn {
+    transition: none;
+  }
+  .btn:hover {
+    transform: none;
+  }
+}
