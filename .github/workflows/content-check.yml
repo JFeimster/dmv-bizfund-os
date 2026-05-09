@@ -1,0 +1,162 @@
+name: Content Check
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/**"
+      - "lib/**"
+      - "app/**"
+      - "components/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/content-check.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "data/**"
+      - "lib/**"
+      - "app/**"
+      - "components/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/content-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-content:
+    name: Validate JSON content and slugs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate JSON files parse cleanly
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const dataDir = path.join(process.cwd(), 'data');
+          const files = fs.readdirSync(dataDir).filter((file) => file.endsWith('.json'));
+
+          let hasError = false;
+
+          for (const file of files) {
+            const fullPath = path.join(dataDir, file);
+            try {
+              JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+              console.log(`✓ ${file} parses cleanly`);
+            } catch (error) {
+              hasError = true;
+              console.error(`✗ ${file} failed JSON parse`);
+              console.error(error.message);
+            }
+          }
+
+          if (hasError) process.exit(1);
+          NODE
+
+      - name: Check duplicate slugs in JSON arrays
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const slugFiles = [
+            'locations.json',
+            'industries.json',
+            'use-cases.json',
+            'referral-partners.json',
+            'tools.json'
+          ];
+
+          let hasError = false;
+
+          for (const file of slugFiles) {
+            const fullPath = path.join(process.cwd(), 'data', file);
+            const records = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+            const seen = new Set();
+
+            for (const record of records) {
+              if (!record.slug) {
+                hasError = true;
+                console.error(`✗ ${file} has a record missing slug`);
+                continue;
+              }
+
+              if (seen.has(record.slug)) {
+                hasError = true;
+                console.error(`✗ ${file} has duplicate slug: ${record.slug}`);
+              }
+
+              seen.add(record.slug);
+            }
+
+            console.log(`✓ ${file} slug check complete`);
+          }
+
+          if (hasError) process.exit(1);
+          NODE
+
+      - name: Confirm required market config fields
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const config = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'market-config.json'), 'utf8'));
+          const required = [
+            'brandName',
+            'parentBrand',
+            'marketName',
+            'marketSlug',
+            'publicDescriptor',
+            'domain',
+            'primaryRegion',
+            'primaryCity',
+            'newsletterName',
+            'primaryCTA',
+            'secondaryCTA',
+            'partnerCTA',
+            'affiliateCTA',
+            'fundingApplicationUrl',
+            'partnerApplicationUrl',
+            'sourceTrackingId',
+            'complianceDisclaimer'
+          ];
+
+          const missing = required.filter((field) => !config[field]);
+
+          if (missing.length) {
+            console.error(`✗ Missing required market config fields: ${missing.join(', ')}`);
+            process.exit(1);
+          }
+
+          console.log('✓ Required market config fields are present');
+          NODE
+
+      - name: Build after content validation
+        run: npm run build
