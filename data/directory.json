@@ -1,0 +1,74 @@
+[
+  {
+    "name": "DMV Accountants",
+    "category": "Accountants",
+    "location": "DC, Northern Virginia, Maryland",
+    "website": "",
+    "bestFit": "Business owners who need cleaner books, tax planning, or funding preparation support.",
+    "referralRelevance": "Accountants can spot cash-flow strain and documentation gaps early.",
+    "businessOwnerPainPointsServed": ["Tax pressure", "Messy financials", "Funding readiness"],
+    "fundingRelatedNote": "Clean financials can support a stronger funding conversation, though approval is never guaranteed.",
+    "contactCta": "Request a directory listing",
+    "ctaHref": "/partner"
+  },
+  {
+    "name": "DMV Bookkeepers",
+    "category": "Bookkeepers",
+    "location": "DC, Northern Virginia, Maryland",
+    "website": "",
+    "bestFit": "Owners who need better transaction cleanup, reporting, and cash-flow visibility.",
+    "referralRelevance": "Bookkeepers often see cash-flow gaps before owners admit there is a problem.",
+    "businessOwnerPainPointsServed": ["Cash-flow visibility", "Bank statement organization", "Receivables tracking"],
+    "fundingRelatedNote": "Better records can help owners understand what to prepare before applying.",
+    "contactCta": "Request a directory listing",
+    "ctaHref": "/partner"
+  },
+  {
+    "name": "DMV Business Attorneys",
+    "category": "Attorneys",
+    "location": "DMV region",
+    "website": "",
+    "bestFit": "Owners dealing with contracts, entity issues, leases, disputes, or growth complexity.",
+    "referralRelevance": "Attorneys can identify funding needs tied to contracts, disputes, expansion, or restructuring.",
+    "businessOwnerPainPointsServed": ["Contracts", "Entity structure", "Lease issues"],
+    "fundingRelatedNote": "Legal clarity can matter when funding is connected to contracts, ownership, or collateral.",
+    "contactCta": "Request a directory listing",
+    "ctaHref": "/partner"
+  },
+  {
+    "name": "DMV Chamber and Networking Groups",
+    "category": "Chambers and networking",
+    "location": "DMV region",
+    "website": "",
+    "bestFit": "Local owners looking for business community, introductions, events, and education.",
+    "referralRelevance": "Community leaders frequently know which owners need capital before the market does.",
+    "businessOwnerPainPointsServed": ["Visibility", "Local referrals", "Peer learning"],
+    "fundingRelatedNote": "Events and workshops can route owners toward readiness tools before they apply.",
+    "contactCta": "Request a directory listing",
+    "ctaHref": "/partner"
+  },
+  {
+    "name": "Veteran Business Resources",
+    "category": "Veteran resources",
+    "location": "DC, Northern Virginia, Maryland",
+    "website": "",
+    "bestFit": "Veteran-owned businesses looking for practical funding readiness and local ecosystem support.",
+    "referralRelevance": "Veteran resource groups can connect operators with tools, guidance, and partner paths.",
+    "businessOwnerPainPointsServed": ["Startup transition", "GovCon readiness", "Working capital"],
+    "fundingRelatedNote": "Veteran-owned firms still need realistic preparation and no-guarantee funding guidance.",
+    "contactCta": "Request a directory listing",
+    "ctaHref": "/partner"
+  },
+  {
+    "name": "Commercial Realtors",
+    "category": "Commercial real estate",
+    "location": "DMV region",
+    "website": "",
+    "bestFit": "Businesses considering expansion, second locations, buildouts, or lease changes.",
+    "referralRelevance": "Commercial realtors see capital needs around buildouts, moves, and expansion timing.",
+    "businessOwnerPainPointsServed": ["Expansion", "Buildout", "Lease timing"],
+    "fundingRelatedNote": "Funding conversations should happen before a lease commitment turns into a cash-flow trap.",
+    "contactCta": "Request a directory listing",
+    "ctaHref": "/partner"
+  }
+]
