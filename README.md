@@ -1,6 +1,6 @@
 # DMV BizFund OS
 
-<img width="1774" height="887" alt="Image" src="https://github.com/user-attachments/assets/2868f5db-1277-4abe-b34f-f8713d539618" />
+<img width="1774" height="887" alt="DMV BizFund OS thumbnail showing the DMV Funding Resource Center powered by Moonshine Capital" src="https://github.com/user-attachments/assets/2868f5db-1277-4abe-b34f-f8713d539618" />
 
 DMV BizFund OS is the first Vercel-ready local market instance of BizFund OS.
 
