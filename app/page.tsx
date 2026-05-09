@@ -20,53 +20,60 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        eyebrow="The DMV Funding Resource Center"
-        title="DMV business funding clarity without the bank runaround."
-        subtitle="Local funding guides, tools, readiness checklists, and referral resources for DC, Northern Virginia, and Maryland business owners who need options — not another generic loan portal in a cheap suit."
-        primaryLabel="Check Funding Options"
+        eyebrow="Built for the DC Metro Area"
+        title="Business Funding for DMV Operators Who Don’t Have Time for Bank Games."
+        subtitle="Explore funding options, readiness tools, local guides, and referral resources for DC, Northern Virginia, and Maryland business owners who need clarity before the bank maze eats another week."
+        primaryLabel="Explore DMV Funding Options"
         primaryHref="/apply"
-        secondaryLabel="Use the Funding Readiness Scorecard"
+        secondaryLabel="How It Works"
         secondaryHref="/tools/dmv-funding-readiness-scorecard"
-        tertiaryLabel="Refer a Business Owner"
+        tertiaryLabel="Partner With Us"
         tertiaryHref="/partner"
-        trustLine="Veteran-owned. DMV-focused. Built to help owners prepare stronger funding applications — not chase mystery approvals."
+        trustLine="Veteran-owned. DMV-focused. Built to help owners prepare stronger funding conversations. Funding options, timing, and terms vary. No guarantee of approval."
       />
 
-      <section className="container py-12 md:py-16">
-        <div className="mb-8 max-w-3xl">
-          <p className="kicker">Why local owners get stuck</p>
-          <h2 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">DMV owners don’t need more lender sludge. They need clarity.</h2>
-          <p className="mt-4 text-muted">Banks move slowly. Online lenders speak fluent fine print. Most owners are stuck between “come back later” and “sign here before you blink.”</p>
+      <section className="container py-16 md:py-24">
+        <div className="mb-12 max-w-3xl md:mx-auto md:text-center">
+          <p className="kicker">The District's speed vs. the bank's wait</p>
+          <h2 className="display-serif mt-3 text-4xl font-black leading-tight tracking-tight md:text-6xl">DMV owners don’t need more lender sludge. They need clarity.</h2>
+          <p className="mt-5 text-muted">Banks move slowly. Online lenders speak fluent fine print. Most owners are stuck between “come back later” and “sign here before you blink.”</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-7 md:grid-cols-3">
           {[
-            ["Bank drag", "Traditional underwriting can move slower than your payroll deadline."],
-            ["Documentation gaps", "Messy statements, unclear use of funds, and weak prep can stall good conversations."],
-            ["Generic marketplaces", "Zip-code lead forms do not understand contractors, restaurants, GovCons, trucking, or local service operators."],
-            ["Referral confusion", "Professionals want to help clients without pretending they are the lender. This gives them a cleaner path."]
+            ["Red Tape", "Stop letting paperwork purgatory eat the week before payroll, inventory, repairs, or expansion decisions show up."],
+            ["Local Blindness", "National lender pages rarely understand GovCons, restaurants, contractors, medical practices, trucking, or DMV service operators."],
+            ["Referral Confusion", "Bankers, accountants, bookkeepers, realtors, and attorneys need a clean way to help clients without playing lender."]
           ].map(([title, text]) => (
-            <div className="card p-6" key={title}>
-              <p className="kicker">Pressure point</p>
-              <h3 className="mt-3 text-xl font-black">{title}</h3>
-              <p className="mt-3 text-sm text-muted">{text}</p>
+            <div className="card p-8 md:p-10" key={title}>
+              <h3 className="display-serif text-2xl font-black">{title}</h3>
+              <p className="mt-4 text-sm text-muted">{text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="container py-12 md:py-16">
-        <div className="command-panel p-6 md:p-10">
-          <p className="kicker">Funding options without the bank runaround</p>
-          <h2 className="mt-3 max-w-4xl text-3xl font-black tracking-tight md:text-5xl">Compare possible paths before you burn another week.</h2>
-          <p className="mt-4 max-w-3xl text-muted">Explore working capital, equipment financing, business credit prep, revenue-based options, invoice-related use cases, and funding readiness steps. Terms vary. Not all businesses qualify. That’s why preparation matters.</p>
-          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {["Working capital", "Equipment financing", "Business credit prep", "Revenue-based options"].map((item) => (
-              <div className="trust-pill" key={item}>{item}</div>
+      <section className="bg-[#f4f7fa] py-16 text-[#0a1629] md:py-24">
+        <div className="container">
+          <div className="mb-12 max-w-3xl md:mx-auto md:text-center">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[#c5a059]">Capitol City funding options</p>
+            <h2 className="display-serif mt-3 text-4xl font-black leading-tight tracking-tight md:text-6xl">Compare possible paths before you burn another week.</h2>
+            <p className="mt-5 text-slate-600">Explore working capital, equipment financing, business credit prep, revenue-based options, invoice-related use cases, and readiness steps. Terms vary. Not all businesses qualify. That’s why preparation matters.</p>
+          </div>
+          <div className="grid gap-7 md:grid-cols-3">
+            {[
+              ["Working Capital", "Payroll gaps, inventory timing, repairs, marketing pushes, or short-term operating pressure."],
+              ["Equipment & Expansion", "Gear, vehicles, kitchen upgrades, medical equipment, contractor tools, or operational buildout needs."],
+              ["Business Credit Prep", "Clean up the funding conversation before you apply and understand what lenders may review."]
+            ].map(([title, text]) => (
+              <div className="border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-[#c5a059] md:p-10" key={title}>
+                <h3 className="display-serif text-3xl font-black">{title}</h3>
+                <p className="mt-5 text-slate-600">{text}</p>
+              </div>
             ))}
           </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a className="btn btn-primary" href="/apply">Compare Funding Options →</a>
-            <a className="btn btn-secondary" href="/directory">Explore the Directory</a>
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <a className="btn btn-primary" href="/apply">Compare Funding Options</a>
+            <a className="btn border-[#0a1629] text-[#0a1629] hover:border-[#c5a059] hover:text-[#c5a059]" href="/directory">Explore the Directory</a>
           </div>
         </div>
       </section>
@@ -92,7 +99,7 @@ export default function HomePage() {
 
       <CardGrid
         eyebrow="Industry funding guides"
-        title="Your cash-flow problems are not generic."
+        title="Industries we help power across the DMV."
         description="Contractors, restaurants, GovCons, trucking companies, medical practices, and local operators need different funding conversations."
         ctaLabel="Open industry guide"
         items={industries.map((item) => ({
