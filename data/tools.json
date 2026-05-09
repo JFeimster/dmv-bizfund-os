@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "dmv-funding-readiness-scorecard",
+    "title": "DMV Funding Readiness Scorecard",
+    "seoTitle": "DMV Funding Readiness Scorecard | DMV BizFund OS",
+    "metaDescription": "Use the DMV Funding Readiness Scorecard to understand what to prepare before applying for business funding.",
+    "summary": "A practical scorecard to help business owners understand what to prepare before applying.",
+    "body": "The scorecard helps owners organize revenue, time in business, documentation, funding use, and readiness signals before applying. It is not an approval engine. It is a clarity engine.",
+    "bestFor": ["Business owners preparing to apply", "Referral partners screening next steps", "Owners who were declined by a bank", "Operators who want to avoid funding panic"],
+    "ctaLabel": "Get Your Score",
+    "ctaHref": "/apply"
+  },
+  {
+    "slug": "local-business-cash-flow-gap-calculator",
+    "title": "Local Business Cash Flow Gap Calculator",
+    "seoTitle": "Local Business Cash Flow Gap Calculator | DMV BizFund OS",
+    "metaDescription": "Estimate your local business cash-flow gap before applying for funding or talking to a referral partner.",
+    "summary": "Estimate the gap between what is due and what is coming in.",
+    "body": "The cash-flow gap calculator helps owners estimate the size and timing of the problem. A vague panic number is not a capital plan.",
+    "bestFor": ["Emergency working capital", "Payroll timing", "Restaurant repairs", "Contractor materials", "Slow receivables"],
+    "ctaLabel": "Calculate Your Gap",
+    "ctaHref": "/apply"
+  }
+]
