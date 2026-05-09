@@ -9,6 +9,7 @@ export default function Header() {
     ["Industries", "/industries"],
     ["Use Cases", "/use-cases"],
     ["Tools", "/tools"],
+    ["Articles", "/articles"],
     ["Partners", "/referral-partners"],
     ["Directory", "/directory"]
   ];
