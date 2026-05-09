@@ -7,12 +7,17 @@ import ComplianceNote from "@/components/ComplianceNote";
 import { getLocationBySlug, getLocations } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
+type SlugPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export function generateStaticParams() {
   return getLocations().map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getLocationBySlug(params.slug);
+export async function generateMetadata({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getLocationBySlug(slug);
   if (!item) return {};
   return createMetadata({
     title: item.seoTitle,
@@ -21,8 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function LocationDetailPage({ params }: { params: { slug: string } }) {
-  const item = getLocationBySlug(params.slug);
+export default async function LocationDetailPage({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getLocationBySlug(slug);
   if (!item) notFound();
 
   return (

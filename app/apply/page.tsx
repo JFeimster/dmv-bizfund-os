@@ -20,7 +20,7 @@ export default function ApplyPage() {
         title="Check funding options without pretending the bank maze is normal."
         description="Start here if your business needs working capital, equipment funding, emergency cash-flow support, or a practical next step after a bank decline. Better inputs create better funding conversations."
         primaryLabel="Start Funding Review"
-        primaryHref={market.applicationUrl}
+        primaryHref="/apply"
         secondaryLabel="Use the Scorecard First"
         secondaryHref="/tools/dmv-funding-readiness-scorecard"
       />
@@ -31,7 +31,7 @@ export default function ApplyPage() {
             <h2 className="mt-3 text-3xl font-black tracking-tight">Start with the facts, not panic.</h2>
             <p className="mt-4 text-muted">Replace this block later with a Tally form, HubSpot form, native Next.js form, or n8n webhook. Keep source tracking attached to: <strong>{market.sourceTrackingId}</strong>.</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a className="btn btn-primary" href={market.applicationUrl}>Start Funding Review →</a>
+              <a className="btn btn-primary" href="/apply">Start Funding Review →</a>
               <a className="btn btn-secondary" href="/tools/dmv-funding-readiness-scorecard">Check Readiness First</a>
             </div>
           </div>

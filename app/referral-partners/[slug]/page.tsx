@@ -7,12 +7,17 @@ import ComplianceNote from "@/components/ComplianceNote";
 import { getReferralPartnerBySlug, getReferralPartners } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
+type SlugPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export function generateStaticParams() {
   return getReferralPartners().map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getReferralPartnerBySlug(params.slug);
+export async function generateMetadata({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getReferralPartnerBySlug(slug);
   if (!item) return {};
   return createMetadata({
     title: item.seoTitle,
@@ -21,8 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function ReferralPartnerDetailPage({ params }: { params: { slug: string } }) {
-  const item = getReferralPartnerBySlug(params.slug);
+export default async function ReferralPartnerDetailPage({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getReferralPartnerBySlug(slug);
   if (!item) notFound();
 
   return (

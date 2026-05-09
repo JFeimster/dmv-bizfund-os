@@ -7,12 +7,17 @@ import ComplianceNote from "@/components/ComplianceNote";
 import { getUseCaseBySlug, getUseCases } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
+type SlugPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export function generateStaticParams() {
   return getUseCases().map((item) => ({ slug: item.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const item = getUseCaseBySlug(params.slug);
+export async function generateMetadata({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getUseCaseBySlug(slug);
   if (!item) return {};
   return createMetadata({
     title: item.seoTitle,
@@ -21,8 +26,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function UseCaseDetailPage({ params }: { params: { slug: string } }) {
-  const item = getUseCaseBySlug(params.slug);
+export default async function UseCaseDetailPage({ params }: SlugPageProps) {
+  const { slug } = await params;
+  const item = getUseCaseBySlug(slug);
   if (!item) notFound();
 
   return (
@@ -32,7 +38,7 @@ export default function UseCaseDetailPage({ params }: { params: { slug: string }
       <InternalLinks
         title="Relevant industries and tools"
         links={[
-          ...item.relevantIndustries.map((slug) => ({ label: slug.replaceAll("-", " "), href: `/industries/${slug}` })),
+          ...item.relevantIndustries.map((industrySlug) => ({ label: industrySlug.replace(/-/g, " "), href: `/industries/${industrySlug}` })),
           { label: item.suggestedCalculatorOrChecklist, href: item.toolSlug ? `/tools/${item.toolSlug}` : "/tools/dmv-funding-readiness-scorecard" },
           { label: "Check Funding Options", href: "/apply" }
         ]}
