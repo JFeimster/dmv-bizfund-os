@@ -1,0 +1,36 @@
+{
+  "brandName": "DMV BizFund OS",
+  "parentBrand": "BizFund OS",
+  "marketName": "DMV",
+  "marketSlug": "dmv",
+  "publicDescriptor": "The DMV Funding Resource Center powered by Moonshine Capital",
+  "domain": "dmv.bizfundos.com",
+  "primaryRegion": "DC, Northern Virginia, and Maryland",
+  "primaryCity": "Washington, DC",
+  "locations": ["Washington DC", "Northern Virginia", "Alexandria VA", "Arlington VA", "Fairfax County", "Maryland"],
+  "counties": ["Fairfax County", "Loudoun County", "Prince William County", "Montgomery County MD", "Prince George's County MD"],
+  "suburbs": ["Springfield", "Falls Church", "Tysons", "Reston", "Herndon", "Manassas", "Woodbridge", "McLean"],
+  "industries": ["Contractors", "Restaurants", "Government Contractors", "Trucking", "Medical Practices", "Veteran-Owned Businesses", "Professional Services", "Retail"],
+  "useCases": ["Emergency working capital", "Equipment financing", "Payroll funding", "Inventory financing", "Cash-flow gap funding", "Bank decline recovery"],
+  "referralPartnerCategories": ["Bank managers", "Accountants", "Bookkeepers", "Commercial realtors", "Attorneys", "Insurance agents", "Business consultants", "Chamber leaders"],
+  "newsletterName": "DMV Capital Brief",
+  "primaryCTA": "Check Funding Options",
+  "secondaryCTA": "Get Your Funding Readiness Score",
+  "partnerCTA": "Become a Referral Partner",
+  "affiliateCTA": "Launch Your Local Funding Resource Center",
+  "fundingApplicationUrl": "/apply",
+  "partnerApplicationUrl": "/partner",
+  "sourceTrackingId": "dmv-bizfund-os-mvp",
+  "complianceDisclaimer": "Funding options vary by business profile, revenue, time in business, credit, documentation, and lender requirements. Submitting information does not guarantee approval, funding, rates, terms, or timing.",
+  "ownerProfile": {
+    "name": "Affiliate or market owner placeholder",
+    "email": "owner@example.com",
+    "crmOwnerId": "placeholder"
+  },
+  "whiteLabel": {
+    "masterSystem": "BizFund OS",
+    "namingPattern": "[Market] Funding Resource Center powered by BizFund OS",
+    "futureInstances": ["dc.bizfundos.com", "nova.bizfundos.com", "maryland.bizfundos.com", "atlanta.bizfundos.com", "dallas.bizfundos.com", "phoenix.bizfundos.com"],
+    "marketSpecificFields": ["marketName", "marketSlug", "domain", "primaryRegion", "primaryCity", "locations", "counties", "suburbs", "industries", "useCases", "newsletterName", "sourceTrackingId", "ownerProfile"]
+  }
+}
